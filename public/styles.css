@@ -1,0 +1,705 @@
+/* Styles généraux */
+body {
+  background-color: #bcdce8; /* Bleu pastel doux */
+  color: #836668; /* Couleur de texte harmonieuse */
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('/images/texture-demi-teinte.png'); /* Texture pop-art en fond */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Typo pour les titres */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  color: #eb9e3f;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+  }
+
+.adminSection {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.adminSection:hover {
+  transform: scale(1.02); /* Animation au survol */
+}
+
+.adminSection h2 {
+    font-family: 'Permanent Marker', cursive;
+    color: #6b568d;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+
+.adminSection p {
+  font-size: 1.2rem;
+  color: #426685;
+  line-height: 1.6;
+}
+
+/* Styles des tâches, avec fusion de adminSection et task-section */
+.adminSection ul, .task-section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.adminSection li, .task-section li {
+  background-color: rgba(235, 158, 63, 0.2); /* Fond semi-transparent pour chaque tâche */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.adminSection li:hover, .task-section li:hover {
+  background-color: rgba(235, 158, 63, 0.4); /* Fond au survol */
+  transform: scale(1.02); /* Légère animation */
+}
+
+/* Styles du formulaire dans la section admin */
+form.adminSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 95%;
+}
+
+form.adminSection .form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  width: 90%;
+}
+
+form.adminSection label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form.adminSection input[type="text"],
+form.adminSection input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #7a96b4;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+form.adminSection .checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-group input {
+  margin-right: 10px;
+}
+
+form.adminSection button {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #eb9e3f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form.adminSection button:hover {
+  background-color: #d37a89;
+}
+
+.user-section .task-list {
+  overflow-y: auto;
+}
+
+/* Styles pour la section utilisateur (user-section) */
+.user-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 5px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.user-section:hover {
+  transform: scale(1.02); /* Animation au survol */
+}
+
+.user-section h2 {
+  font-family: 'Permanent Marker', cursive;
+  color: #6b568d;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.user-section p {
+  font-size: 1.2rem;
+  color: #426685;
+  line-height: 1.6;
+}
+
+.user-section li, .task-name{
+  padding: 5px;
+}
+
+/* Styles des tâches, avec fusion de user-section et task-section */
+.user-section ul, .task-section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.user-section li, .task-section li {
+  background-color: rgba(235, 158, 63, 0.2); /* Fond semi-transparent pour chaque tâche */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Style pour les points de chaque tâche */
+.user-section li .task-points {
+  color: #d37a89; /* Rouge vif pour les points */
+  font-size: 1rem;
+  margin-top: 5px; /* Espace entre la description et les points */
+}
+
+.user-section li:hover, .task-section li:hover {
+  background-color: rgba(235, 158, 63, 0.4); /* Fond au survol */
+  transform: scale(1.02); /* Légère animation */
+}
+
+/* Animation pour l'affichage des tiroirs de tâches */
+.task-list {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.task-list.open {
+  max-height: 1000px; /* Ajustez selon vos besoins */
+  opacity: 1;
+}
+
+
+/* Modification des titres pour indiquer qu'ils sont cliquables */
+.user-section h2 {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.user-section h2:hover {
+  color: #d37a89; /* Couleur au survol pour indiquer l'interaction */
+}
+
+.cartons-section {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 5px 0px 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.assignCarton {
+  padding-bottom: 10px;
+}
+
+.carton-icon {
+  width: 30px;
+  height: 45px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* Styles pour les icônes de carton dans le leaderboard */
+.carton-icons, .carton-container {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.carton-summary {
+  margin-top: 20px;
+}
+
+.carton-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.carton-entry span {
+  margin-right: 10px;
+  color: #836668;
+}
+
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.task-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-table .task-name {
+  text-align: left;
+}
+
+.task-table .task-points {
+  text-align: center;
+  color:#d37a89;
+  font-weight: bold;
+}
+
+.task-table button {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Boutons */
+button {
+  background-color: #eb9e3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.jaune{
+  background-color: #fff52b;
+  color: #717171;
+}
+
+.rouge{
+  background-color: #f42727;
+}
+
+
+button:hover {
+  background-color: #d37a89; /* Couleur légèrement différente au survol */
+}
+
+button:disabled {
+  background-color: #837f59; /* Bouton désactivé */
+  cursor: not-allowed;
+}
+
+/* Podium */
+.podium {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.podium-step {
+  position: relative;
+  width: 120px;
+  text-align: center;
+  background-color: #d37a89;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.podium-step.first {
+  height: 200px;
+  background-color: #eb9e3f; /* 1ère place */
+}
+
+.podium-step.second {
+  height: 160px;
+  background-color: #7a96b4; /* 2ème place */
+}
+
+.podium-step.third {
+  height: 120px;
+  background-color: #836668; /* 3ème place */
+}
+
+.podium-step img.avatar {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 5px solid #fff;
+  width: 80px;
+  height: 80px;
+}
+
+.podium-step .score {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #fff;
+  margin-top:35px;
+}
+
+/* Tableau des scores */
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.score-board span {
+  font-size: 1.5rem;
+  background-color: #e1dbcb;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: #426685;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Réglages pour le lien admin et la pastille de BDD */
+#dbStatus {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  font-size: 10px;
+  padding: 10px;
+}
+
+
+#dbStatus.status-green .icon::before {
+  content: "🟢";
+}
+
+#dbStatus.status-red .icon::before {
+  content: "🔴";
+}
+
+#nav {
+  position: absolute;
+  top: 50px;
+  right: 17%;
+  transform: translateY(5%);
+}
+
+/* Style de l'icône d'administration */
+#admin-link .settings-icon {
+  width: 40px; /* Taille de l'icône */
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Animation pour l'effet de clic */
+}
+
+#admin-link .settings-icon:hover {
+  transform: scale(1.1); /* Légère agrandissement au survol */
+}
+
+#admin-link .settings-icon:active {
+  transform: scale(0.95); /* Effet d’enfoncement lors du clic */
+}
+
+.settings-icon {
+  width: 35px;
+  height: 35px;
+}
+
+/* Leaderboard - Style du bargraph avec couleurs par utilisateur */
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement opaque */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.bar-label {
+  width: 100px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #836668;
+}
+
+.bar-fill {
+  height: 20px;
+  background-color: #6b568d; /* Couleur par défaut */
+  transition: width 0.7s ease;
+  border-radius: 10px;
+}
+
+.bar-fill.ivanhoé { background-color: #d37a89; }
+.bar-fill.alistair { background-color: #eb9e3f; }
+.bar-fill.eléanore { background-color: #6b568d; }
+
+.bar-score {
+  margin-left: 10px;
+  color: #eb9e3f;
+  font-weight: bold;
+}
+
+/* Largeur minimale des barres pour 0 points */
+.bar-fill[data-points='0'] {
+  width: 4px; /* Largeur par défaut pour un score de 0 */
+}
+
+/* Styles du tableau de tâches pour l'admin */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.task-table th, .task-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.task-table th {
+  background-color: #f5f5f5;
+  color: #836668;
+  font-weight: bold;
+}
+
+/* Tiroir pour la liste des tâches */
+.task-list-container {
+  margin-top: 10px;
+  overflow: hidden;
+  transition: max-height 0.5s ease; /* Animation d'ouverture */
+}
+
+#taskListHeader {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eb9e3f; /* Couleur de fond semblable à un bouton */
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Effet de profondeur */
+}
+
+#taskListHeader:hover {
+  background-color: #d37a89; /* Couleur plus foncée au survol */
+  transform: scale(1.05); /* Légère mise en avant */
+}
+
+#taskListHeader:active {
+  transform: scale(0.98); /* Effet d'enfoncement */
+}
+
+.carton {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 10;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .task-section, .user-section {
+    width: 90%;
+  }
+
+  .podium-step {
+    width: 80px;
+    height: 70px;
+  }
+
+  .podium-step img.avatar {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Styles de base pour les icônes en arrière-plan */
+.background-icon {
+  position: fixed;
+  opacity: 0.7; /* Transparence pour effet d’arrière-plan */
+  z-index: -1; /* Derrière tous les autres éléments */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Positionnement spécifique pour chaque image de fond */
+
+.sword {
+  background-image: url('images/sword.png');
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: 21%;
+  left: 70%;
+  transform: rotate(36deg);
+  opacity: 0.8;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.arbre {
+  background-image: url('images/arbre.png');
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 8%;
+  right: 4%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.fleur-rose {
+  background-image: url('images/fleur_rose.png');
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 47%;
+  left: 23%;
+  z-index: 2;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* css mobile */
+/* Taille et marges ajustées pour les titres des tiroirs */
+@media (max-width: 768px) {
+
+  #nav {
+    top: 140px;
+    left: 45px
+  }
+
+  .user-section {
+    width: 75%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 0px 20px;
+  }
+
+  .user-section h2 {
+    font-size: 1.5rem; /* Taille réduite pour éviter le débordement */
+  }
+
+  .user-section li {
+    font-size: 0.8rem; 
+    padding: 12px 2px 15px;
+  }
+
+  user-section li .task-points {
+    font-size: 0.8rem;
+}
+
+  button {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    margin: 0px 10px;
+  }
+
+  /* Réglages de positionnement pour l'épée, l'arbre, et la fleur en fond */
+  .sword {
+    width: 75px;
+    height: 75px;
+    right: 8%; /* Ajustement pour dégager le contenu principal */
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .arbre {
+    width: 80px;
+    height: 80px;
+    bottom: 12%; /* Position ajustée pour laisser de la place en dessous */
+    right: 3%;
+  }
+
+  .fleur-rose {
+    width: 60px;
+    height: 60px;
+    left: 8%; /* Rapprochée du bord gauche */
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-section .task-list {
+    overflow-y: auto;
+  }
+}

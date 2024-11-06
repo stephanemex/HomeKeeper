@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeKeeper - Tâches des Enfants</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<script src="enfants.js"></script>
+<body>
+  <h1>Mes Quêtes Quotidiennes</h1>
+         <!-- Lien vers la page d'administration avec l'icône engrenage -->
+         <div id="nav">
+            <a href="admin.html" id="admin-link">
+                <img src="images/setting.png" alt="Administration" class="settings-icon">
+              </a>
+        </div>
+
+  <!-- Section pour chaque enfant -->
+  <div id="tasksContainer">
+    <div class="user-section" id="section-Eleanore">
+      <h2>Eleanore</h2>
+      <ul id="tasks-Eleanore" class="task-list"></ul>
+    </div>
+    <div class="user-section" id="section-Alistair">
+      <h2>Alistair</h2>
+      <ul id="tasks-Alistair" class="task-list"></ul>
+    </div>
+    <div class="user-section" id="section-Ivanhoe">
+      <h2>Ivanhoe</h2>
+      <ul id="tasks-Ivanhoe" class="task-list"></ul>
+    </div>
+  </div>
+
+    <!-- Section Podium -->
+    <!-- Structure pour le podium dans index.html -->
+    <div class="podium">
+        <div class="podium-step second">
+        <img src="images/alistair.png" alt="Alistair" class="avatar">
+        <div class="score" id="score-alistair">0 pts</div>
+        <!-- Conteneur pour le carton -->
+        <div class="carton-container" id="carton-alistair"></div>
+        </div>
+        <div class="podium-step first">
+        <img src="images/eleanore.png" alt="Eleanore" class="avatar">
+        <div class="score" id="score-eleanore">0 pts</div>
+        <div class="carton-container" id="carton-eleanore"></div>
+        </div>
+        <div class="podium-step third">
+        <img src="images/ivanhoe.png" alt="Ivanhoe" class="avatar">
+        <div class="score" id="score-ivanhoe">0 pts</div>
+        <div class="carton-container" id="carton-ivanhoe"></div>
+        </div>
+    </div>
+    
+
+    <!-- Indicateur de statut de la BDD avec une icône -->
+    <div id="dbStatus" class="status-red">
+        <span class="icon">DB Statut</span> <!-- Icône d'alerte par défaut -->
+    </div>
+
+    <div class="background-icon sword"></div>
+    <div class="background-icon arbre"></div>
+    <div class="background-icon fleur-rose"></div>
+
+</body>
+</html>
